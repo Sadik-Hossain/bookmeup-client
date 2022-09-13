@@ -1,20 +1,25 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink, useMatch, useResolvedPath } from "react-router-dom";
 import { TiThMenu } from "react-icons/ti";
 import { FcHome } from "react-icons/fc";
+
 const Navbar = () => {
+  let resolved = useResolvedPath("/");
+  let match = useMatch({ path: resolved.pathname, end: true });
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <div className="bg-teal-500">
       <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div className="relative flex items-center justify-between">
-          <a href="/" title="bookmeup" className="inline-flex items-center">
-            <FcHome style={{ fontSize: "2rem" }} />
-            <span className="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
-              bookmeup
-            </span>
-          </a>
-          <ul className="flex items-center hidden space-x-8 lg:flex">
+          <Link to="/">
+            <div className="flex justify-center items-center">
+              <FcHome style={{ fontSize: "2rem" }} />
+              <span className="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
+                bookmeup
+              </span>
+            </div>
+          </Link>
+          <ul className="flex items-center hidden space-x-8 md:flex">
             <li>
               <a
                 href="/"
@@ -46,14 +51,14 @@ const Navbar = () => {
               </a>
             </li>
             <li>
-              <a
-                href="/"
-                aria-label="About us"
-                title="About us"
-                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+              <Link
+                to="/about"
+                // aria-label="About us"
+                // title="About us"
+                // className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
               >
                 About us
-              </a>
+              </Link>
             </li>
             <li>
               <Link to="/login">
@@ -63,7 +68,7 @@ const Navbar = () => {
               </Link>
             </li>
           </ul>
-          <div className="lg:hidden">
+          <div className="md:hidden">
             <button
               aria-label="Open Menu"
               title="Open Menu"
