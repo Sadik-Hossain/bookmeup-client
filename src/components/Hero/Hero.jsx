@@ -4,6 +4,7 @@ import "react-multi-carousel/lib/styles.css";
 import img1 from "../../assets/pexels-frans-van-heerden-1438832.jpg";
 import img2 from "../../assets/pexels-pixabay-259588.jpg";
 import img3 from "../../assets/pexels-pixabay-276724.jpg";
+import SearchField from "../SearchField/SearchField";
 
 const responsive = {
   superLargeDesktop: {
@@ -52,27 +53,31 @@ const Hero = () => {
         infinite={true}
         autoPlay={true}
         autoPlaySpeed={1000}
-        arrows={false}
-        customButtonGroup={<ButtonGroup />}
+        arrows={true}
       >
         <div>
-          <img src={img1} className="max-w-full h-auto object-cover" alt="" />
+          <img
+            src={img1}
+            class="object-cover object-center w-full h-full block"
+            alt=""
+          />
         </div>
         <div className="w-auto ">
-          <img src={img3} className="max-w-full h-auto object-cover" alt="" />
+          <img
+            src={img3}
+            class="object-cover object-center w-full h-full block"
+            alt=""
+          />
         </div>
         <div>
-          <img src={img1} className="max-w-full h-auto object-cover" alt="" />
+          <img
+            src={img1}
+            class="object-cover object-center w-full h-full block"
+            alt=""
+          />
         </div>
       </Carousel>
-      <div className="absolute  xs:bottom-4 md:bottom-10 left-0 flex flex-col gap-4 items-start ml-8 justify-end bg-transparent w-10/12 py-4 px-7">
-        <h1 className="xs:text-xl sm:text-5xl md:text-6xl text-white  drop-shadow-lg shadow-black ">
-          Lorem ipsum dolor sit amet.
-        </h1>
-        <button class="text-center text-indigo-400 font-bold rounded py-2 px-2  focus:outline-none bg-gray-900 border-2 border-indigo-400">
-          Explore more
-        </button>
-      </div>
+      <SearchField />
     </div>
   );
 };

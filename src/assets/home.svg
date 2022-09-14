@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<svg
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:cc="http://web.resource.org/cc/"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    xmlns:ns1="http://sozi.baierouge.fr"
+    id="Ebene_1"
+    xml:space="preserve"
+    viewBox="0 0 110 175"
+    y="0px"
+    version="1.1"
+    enable-background="new 0 0 110 175"
+    x="0px"
+  >
+<g
+      id="Home"
+    >
+			<path
+        d="m106.25 64.676c0.179-0.806 0.336-1.62 0.477-2.439 0.476-2.634 0.753-5.135 0.753-7.434 0-0.149-0.017-0.292-0.022-0.439 0.006-0.287 0.022-0.572 0.022-0.859 0-28.447-23.062-51.508-51.508-51.508s-51.508 23.061-51.508 51.507c0 0.284 0.016 0.563 0.02 0.846-0.004 0.152-0.02 0.299-0.02 0.453 0 34.263 51.508 103.02 51.508 103.02s40.504-55.316 49.656-90.638c0.178-0.634 0.339-1.275 0.487-1.92 0.04-0.198 0.09-0.392 0.13-0.586z"
+        fill="#009640"
+    />
+		<mask
+        id="SVGID_1_"
+        height="155.822"
+        width="103.016"
+        y="1.997"
+        x="4.464"
+        maskUnits="userSpaceOnUse"
+      >
+		</mask
+    >
+		<g
+        opacity=".5"
+        mask="url(#SVGID_1_)"
+      >
+			<path
+          d="m106.25 64.676c0.179-0.806 0.336-1.62 0.477-2.439 0.476-2.634 0.753-5.135 0.753-7.434 0-0.149-0.017-0.292-0.022-0.439 0.006-0.287 0.022-0.572 0.022-0.859 0-28.447-23.062-51.508-51.508-51.508s-51.508 23.061-51.508 51.507c0 0.284 0.016 0.563 0.02 0.846-0.004 0.152-0.02 0.299-0.02 0.453 0 34.263 51.508 103.02 51.508 103.02s40.504-55.316 49.656-90.638c0.178-0.634 0.339-1.275 0.487-1.92 0.04-0.198 0.09-0.392 0.13-0.586z"
+      />
+		</g
+    >
+	<path
+        id="path5343_1_"
+        d="m83.786 43.789h-55.629l13.907-9.389 13.907-9.39 13.907 9.39 13.908 9.389z"
+        fill="#fff"
+    />
+	<path
+        d="m33.55 45.822v32.273h25.959v-19.065h10.891v19.065h7.992v-32.273h-44.842zm15.887 22.044h-9.249v-9.247h9.249v9.247z"
+        fill="#fff"
+    />
+</g
+  >
+<metadata
+    ><rdf:RDF
+      ><cc:Work
+        ><dc:format
+          >image/svg+xml</dc:format
+        ><dc:type
+            rdf:resource="http://purl.org/dc/dcmitype/StillImage"
+        /><cc:license
+            rdf:resource="http://creativecommons.org/licenses/publicdomain/"
+        /><dc:publisher
+          ><cc:Agent
+              rdf:about="http://openclipart.org/"
+            ><dc:title
+              >Openclipart</dc:title
+            ></cc:Agent
+          ></dc:publisher
+        ><dc:title
+          >Green Home Icon</dc:title
+        ><dc:date
+          >2013-05-05T21:57:12</dc:date
+        ><dc:description
+          >A green icon shaped like a location pointer, with a house symbol. The icon could be used as a location pointer, a home icon or an icon with a different symbol. </dc:description
+        ><dc:source
+          >https://openclipart.org/detail/177826/green-home-icon-by-j32-177826</dc:source
+        ><dc:creator
+          ><cc:Agent
+            ><dc:title
+              >J32</dc:title
+            ></cc:Agent
+          ></dc:creator
+        ><dc:subject
+          ><rdf:Bag
+            ><rdf:li
+              >arrow</rdf:li
+            ><rdf:li
+              >color</rdf:li
+            ><rdf:li
+              >green</rdf:li
+            ><rdf:li
+              >home</rdf:li
+            ><rdf:li
+              >house</rdf:li
+            ><rdf:li
+              >icon</rdf:li
+            ><rdf:li
+              >icons</rdf:li
+            ><rdf:li
+              >indicator</rdf:li
+            ><rdf:li
+              >location</rdf:li
+            ><rdf:li
+              >location marker</rdf:li
+            ><rdf:li
+              >location pointer</rdf:li
+            ><rdf:li
+              >map</rdf:li
+            ><rdf:li
+              >map marker</rdf:li
+            ><rdf:li
+              >map pointer</rdf:li
+            ><rdf:li
+              >notification</rdf:li
+            ><rdf:li
+              >pointer</rdf:li
+            ><rdf:li
+              >symbol</rdf:li
+            ></rdf:Bag
+          ></dc:subject
+        ></cc:Work
+      ><cc:License
+          rdf:about="http://creativecommons.org/licenses/publicdomain/"
+        ><cc:permits
+            rdf:resource="http://creativecommons.org/ns#Reproduction"
+        /><cc:permits
+            rdf:resource="http://creativecommons.org/ns#Distribution"
+        /><cc:permits
+            rdf:resource="http://creativecommons.org/ns#DerivativeWorks"
+        /></cc:License
+      ></rdf:RDF
+    ></metadata
+  ></svg
+>

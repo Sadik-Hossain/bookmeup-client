@@ -55,7 +55,7 @@ const Navbar = () => {
                 to="/about"
                 // aria-label="About us"
                 // title="About us"
-                // className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
               >
                 About us
               </Link>
