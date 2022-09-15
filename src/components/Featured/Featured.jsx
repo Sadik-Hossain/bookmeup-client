@@ -34,7 +34,7 @@ const Card = ({ img }) => {
         <div className="c-card overflow-hidden">
           <img
             alt="gallery"
-            className="lg:h-48 md:h-36 w-full object-cover object-center "
+            className="lg:h-52 md:h-48 w-full object-cover object-center "
             src={img}
           />
         </div>
@@ -71,6 +71,12 @@ const Card = ({ img }) => {
 const Featured = () => {
   return (
     <section class="text-gray-600 body-font">
+      <h1 className="text-6xl text-black text-center mt-16 ">
+        Fetured Hotel{" "}
+        <span>
+          <BsStars className="inline text-yellow-400" />
+        </span>{" "}
+      </h1>
       <div class="container px-5 py-24 mx-auto">
         <div class="flex flex-wrap -m-4">
           {arr.map((e, i) => (
