@@ -45,7 +45,7 @@ const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
 };
 const Hero = () => {
   return (
-    <div style={{ position: "relative" }}>
+    <div className="relative">
       <Carousel
         draggable={false}
         swipeable={false}
@@ -53,7 +53,7 @@ const Hero = () => {
         infinite={true}
         autoPlay={true}
         autoPlaySpeed={1000}
-        arrows={true}
+        arrows={false}
       >
         <div>
           <img
