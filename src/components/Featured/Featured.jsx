@@ -40,16 +40,18 @@ const Card = ({ img }) => {
         </div>
         <div class="px-8 py-10 w-full   bg-white ">
           <div className="flex justify-between items-center">
-            <h2 class=" text-md  font-bold text-black mb-4">Berlin, Germany</h2>
+            <h2 class=" text-md text-ellipsis overflow-hidden whitespace-nowrap  font-bold text-black mb-4">
+              Berlin, Germany
+            </h2>
             <div className="flex items-center text-2xl">
               <p className="text-black">4.5</p>
               <BsFillStarFill className=" mx-3 text-yellow-400" />
             </div>
           </div>
-          <h1 class="title-font text-lg font-medium text-black mb-3">
+          <h1 class="title-font  text-ellipsis overflow-hidden whitespace-nowrap text-lg font-medium text-black mb-3">
             Morning Stars Hotel
           </h1>
-          <p class="leading-relaxed">
+          <p class="leading-relaxed ">
             Beautiful sea-side hotel with a stunning balcony view. Very
             attractive and beautiful interior design and luxury
           </p>
