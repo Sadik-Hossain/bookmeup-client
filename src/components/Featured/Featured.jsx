@@ -1,119 +1,79 @@
-import img1 from "../../assets/pexels-frans-van-heerden-1438832.jpg";
-import img2 from "../../assets/pexels-pixabay-259588.jpg";
-import img3 from "../../assets/pexels-pixabay-276724.jpg";
+import { BsFillStarFill, BsStars } from "react-icons/bs";
+import ReactStars from "react-rating-stars-component";
+import img1 from "../../assets/img1.jpg";
+import img2 from "../../assets/img2.jpg";
+import img3 from "../../assets/img3.jpg";
+import img4 from "../../assets/img4.jpg";
+import img5 from "../../assets/img5.jpg";
+import img6 from "../../assets/img6.jpg";
+import "./featured.css";
+const arr = [
+  img1,
+  img2,
+  img3,
+  img4,
+  img5,
+  img6,
+  img1,
+  img2,
+  img3,
+  img4,
+  img5,
+  img6,
+  img1,
+  img2,
+  img3,
+  img4,
+  img5,
+  img6,
+];
+const Card = ({ img }) => {
+  return (
+    <div class="lg:w-1/3 sm:w-1/2 p-4">
+      <div className="border rounded-xl border-black c-card overflow-hidden">
+        <div className="c-card overflow-hidden">
+          <img
+            alt="gallery"
+            className="lg:h-48 md:h-36 w-full object-cover object-center "
+            src={img}
+          />
+        </div>
+        <div class="px-8 py-10 w-full   bg-white ">
+          <div className="flex justify-between items-center">
+            <h2 class=" text-md  font-bold text-black mb-4">Berlin, Germany</h2>
+            <div className="flex items-center text-2xl">
+              <p className="text-black">4.5</p>
+              <BsFillStarFill className=" mx-3 text-yellow-400" />
+            </div>
+          </div>
+          <h1 class="title-font text-lg font-medium text-black mb-3">
+            Morning Stars Hotel
+          </h1>
+          <p class="leading-relaxed">
+            Beautiful sea-side hotel with a stunning balcony view. Very
+            attractive and beautiful interior design and luxury
+          </p>
+          <ReactStars
+            count={5}
+            size={24}
+            activeColor="#ffd700"
+            isHalf={true}
+            edit={false}
+            value={4.5}
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
 const Featured = () => {
   return (
     <section class="text-gray-600 body-font">
       <div class="container px-5 py-24 mx-auto">
         <div class="flex flex-wrap -m-4">
-          <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-            <a class="block relative h-48 rounded overflow-hidden">
-              <img
-                alt="ecommerce"
-                class="object-cover object-center w-full h-full block"
-                src={img1}
-              />
-            </a>
-            <div class="mt-4">
-              <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
-                CATEGORY
-              </h3>
-              <h2 class="text-gray-900 title-font text-lg font-medium">
-                The Catalyzer
-              </h2>
-              <p class="mt-1">$16.00</p>
-            </div>
-          </div>
-          <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-            <a class="block relative h-48 rounded overflow-hidden">
-              <img
-                alt="ecommerce"
-                class="object-cover object-center w-full h-full block"
-                src={img2}
-              />
-            </a>
-            <div class="mt-4">
-              <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
-                CATEGORY
-              </h3>
-              <h2 class="text-gray-900 title-font text-lg font-medium">
-                Shooting Stars
-              </h2>
-              <p class="mt-1">$21.15</p>
-            </div>
-          </div>
-          <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-            <a class="block relative h-48 rounded overflow-hidden">
-              <img
-                alt="ecommerce"
-                class="object-cover object-center w-full h-full block"
-                src={img3}
-              />
-            </a>
-            <div class="mt-4">
-              <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
-                CATEGORY
-              </h3>
-              <h2 class="text-gray-900 title-font text-lg font-medium">
-                Neptune
-              </h2>
-              <p class="mt-1">$12.00</p>
-            </div>
-          </div>
-          <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-            <a class="block relative h-48 rounded overflow-hidden">
-              <img
-                alt="ecommerce"
-                class="object-cover object-center w-full h-full block"
-                src={img1}
-              />
-            </a>
-            <div class="mt-4">
-              <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
-                CATEGORY
-              </h3>
-              <h2 class="text-gray-900 title-font text-lg font-medium">
-                The 400 Blows
-              </h2>
-              <p class="mt-1">$18.40</p>
-            </div>
-          </div>
-          <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-            <a class="block relative h-48 rounded overflow-hidden">
-              <img
-                alt="ecommerce"
-                class="object-cover object-center w-full h-full block"
-                src={img2}
-              />
-            </a>
-            <div class="mt-4">
-              <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
-                CATEGORY
-              </h3>
-              <h2 class="text-gray-900 title-font text-lg font-medium">
-                The Catalyzer
-              </h2>
-              <p class="mt-1">$16.00</p>
-            </div>
-          </div>
-          <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-            <a class="block relative h-48 rounded overflow-hidden">
-              <img
-                alt="ecommerce"
-                class="object-cover object-center w-full h-full block"
-                src={img3}
-              />
-            </a>
-            <div class="mt-4">
-              <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
-                CATEGORY
-              </h3>
-              <h2 class="text-gray-900 title-font text-lg font-medium">
-                Shooting Stars
-              </h2>
-              <p class="mt-1">$21.15</p>
-            </div>
-          </div>
+          {arr.map((e, i) => (
+            <Card img={e} key={i} />
+          ))}
         </div>
       </div>
     </section>

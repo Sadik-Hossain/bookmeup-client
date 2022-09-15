@@ -1,9 +1,9 @@
 import Carousel from "react-multi-carousel";
 import { AiFillCaretRight } from "react-icons/ai";
 import "react-multi-carousel/lib/styles.css";
-import img1 from "../../assets/pexels-frans-van-heerden-1438832.jpg";
-import img2 from "../../assets/pexels-pixabay-259588.jpg";
-import img3 from "../../assets/pexels-pixabay-276724.jpg";
+import img1 from "../../assets/img1.jpg";
+import img2 from "../../assets/img2.jpg";
+import img3 from "../../assets/img3.jpg";
 import SearchField from "../SearchField/SearchField";
 
 const responsive = {
@@ -37,8 +37,7 @@ const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
       />
       <button onClick={() => next()} />
       <button onClick={() => goToSlide(currentSlide + 1)}>
-        {" "}
-        Go to any slide{" "}
+        Go to any slide
       </button>
     </div>
   );
@@ -64,14 +63,14 @@ const Hero = () => {
         </div>
         <div className="w-auto ">
           <img
-            src={img3}
+            src={img2}
             class="object-cover object-center w-full h-full block"
             alt=""
           />
         </div>
         <div>
           <img
-            src={img1}
+            src={img3}
             class="object-cover object-center w-full h-full block"
             alt=""
           />

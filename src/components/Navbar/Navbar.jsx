@@ -18,7 +18,7 @@ const Navbar = () => {
               </span>
             </div>
           </Link>
-          <ul className="lg:flex items-center sm:hidden md:hidden space-x-8 ">
+          <ul className="flex items-center hidden space-x-8 lg:flex ">
             <li>
               <Link
                 to="/"
