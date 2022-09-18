@@ -29,32 +29,39 @@ const arr = [
 ];
 const Card = ({ img }) => {
   return (
-    <div class="lg:w-1/3 sm:w-1/2 p-4">
-      <div className="border rounded-xl border-black c-card overflow-hidden">
+    <div class="lg:w-1/3 sm:w-1/2 p-8 ">
+      <div className="border rounded-xl border-black c-card overflow-hidden ">
         <div className="c-card overflow-hidden">
           <img
             alt="gallery"
-            className="lg:h-52 md:h-48 w-full object-cover object-center "
+            className="lg:h-60 md:h-48 w-full object-cover object-center "
             src={img}
           />
         </div>
-        <div class="px-8 py-10 w-full   bg-white ">
+        <div class="px-8 py-4 w-full   bg-white ">
           <div className="flex justify-between items-center">
-            <h2 class=" text-md text-ellipsis overflow-hidden whitespace-nowrap  font-bold text-black mb-4">
-              Berlin, Germany
-            </h2>
+            <div className="mb-2">
+              <h2 class=" text-md text-ellipsis overflow-hidden whitespace-nowrap max-w-[10ch] font-bold text-black ">
+                Berlin
+              </h2>
+              <p>Germany</p>
+            </div>
             <div className="flex items-center text-2xl">
               <p className="text-black">4.5</p>
               <BsFillStarFill className=" mx-3 text-yellow-400" />
             </div>
           </div>
-          <h1 class="title-font  text-ellipsis overflow-hidden whitespace-nowrap text-lg font-medium text-black mb-3">
+          <h1 class="  text-ellipsis overflow-hidden whitespace-nowrap text-lg font-medium text-black ">
             Morning Stars Hotel
           </h1>
-          <p class="leading-relaxed ">
+
+          <p className="demo1">
             Beautiful sea-side hotel with a stunning balcony view. Very
-            attractive and beautiful interior design and luxury
+            attractive and beautiful interior design and luxury Beautiful
+            sea-side hotel with a stunning balcony view. Beautiful sea-side
+            hotel with a stunning balcony view.
           </p>
+
           <ReactStars
             count={5}
             size={24}
@@ -63,6 +70,9 @@ const Card = ({ img }) => {
             edit={false}
             value={4.5}
           />
+          <button className="active:scale-[0.934] transition-all ease-linear duration-75 py-0 px-3 h-10 self-center bg-green-400 mt-4 rounded-md text-black hover:bg-green-500">
+            Read more
+          </button>
         </div>
       </div>
     </div>

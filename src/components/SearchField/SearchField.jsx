@@ -1,13 +1,14 @@
-import React, { forwardRef, useState } from "react";
-import { FiSearch } from "react-icons/fi";
+import { useState } from "react";
+
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./SearchField.css";
 import { countries } from "../../../public/country";
+import Range from "./rangeSlider/Range";
+import axios from "axios";
 
 const SearchField = () => {
   const [place, setPlace] = useState("");
-  const [range, setRange] = useState(100);
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(0);
   const onChange = (dates) => {
@@ -21,21 +22,31 @@ const SearchField = () => {
   const handleChange = (e) => {
     setPlace(e.target.value);
   };
-  const handleRange = (e) => {
-    setRange(e.target.value);
+  const [min1, setMin1] = useState(0);
+  const [max1, setMax1] = useState(0);
+  const handleRange = ({ min, max }) => {
+    setMin1(min);
+    setMax1(max);
   };
-  const handleClick = (e) => {
+  console.log(`min = ${min1}, max = ${max1}`);
+
+  const handleClick = async (e) => {
     e.preventDefault();
     const a = new Date(startDate).getTime();
     const b = new Date(endDate).getTime();
-    console.log(place, a, b, range);
+    console.log(place, a, b, min1, max1);
+
+    const result = await axios.get(
+      `http://localhost:5000/api/hotel?country=${place}&min=${min1}&max=${max1}&startdate=${a}&enddate=${b}`
+    );
+    console.log(result.data);
   };
   //* var one_day = 1000 * 60 * 60 * 24
   //* day calc = (b-a)/one_day
   return (
-    <section className="text-gray-600 body-font">
+    <section className="text-gray-600 ">
       <div className="px-2  mx-auto">
-        <div className="rounded-lg bg-green-400 flex lg:w-3/4 w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">
+        <div className="rounded-lg bg-green-400 flex w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">
           <div className="relative flex-grow w-full p-3">
             <label for="country" className="leading-7 text-sm text-black">
               Enter Country:
@@ -45,7 +56,8 @@ const SearchField = () => {
               list="e"
               id="full-name"
               name="full-name"
-              className="w-full  bg-opacity-50 rounded border  border-black outline-green-400  text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              className="w-full  rounded border  border-black outline-green-400  text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              onChange={handleChange}
             />
             <datalist id="e">
               {countries.map((e, i) => (
@@ -54,12 +66,17 @@ const SearchField = () => {
             </datalist>
           </div>
           <div className="relative flex-grow w-full p-3">
-            <label for="email" className="leading-7 text-sm text-black">
-              Email
+            <label
+              for="date"
+              className={`leading-7 text-sm ${
+                !startDate || !endDate ? "text-red-600 font-bold" : "text-black"
+              }`}
+            >
+              Pick a Date:
             </label>
-            <div>
+            <div className="z-99">
               <DatePicker
-                className="block border text-xs lg:px-4 rounded  border-black leading-6 py-2 outline-green-400 sm:flex-grow w-full md:w-full"
+                className="z-99 block border text-xs lg:px-4 rounded  border-black leading-6 py-2 outline-green-400 sm:flex-grow w-full md:w-full "
                 selected={startDate}
                 onChange={onChange}
                 startDate={startDate}
@@ -72,20 +89,13 @@ const SearchField = () => {
                 dateFormat="dd/MM/yyyy"
               />
             </div>
-            {/* <input
-              type="email"
-              id="email"
-              name="email"
-              className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-            /> */}
           </div>
           <div className="relative flex-grow w-full p-3 ">
-            <label className="leading-7 text-sm text-black text-ellipsis whitespace-pre">
+            <label className="leading-7 text-center text-sm text-black ">
               price range:&nbsp;
             </label>
-            <output className=" h-0 text-sm text-black">{range}$/day</output>
 
-            <input
+            {/* <input
               type="range"
               id="email"
               className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
@@ -96,12 +106,14 @@ const SearchField = () => {
               max="5000"
               placeholder="price"
               onChange={handleRange}
-            />
+            /> */}
+
+            <Range min={0} max={1000} onChange={handleRange} />
           </div>
-          <div className="p-3 w-full">
+          <div className="p-3 w-full self-center">
             <button
               onClick={handleClick}
-              className="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg w-full"
+              className="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg w-full active:scale-[0.967]"
             >
               Search
             </button>

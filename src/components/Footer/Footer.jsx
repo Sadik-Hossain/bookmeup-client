@@ -16,7 +16,7 @@ const Footer = () => {
                     href="/"
                     className="text-gray-100 transition-colors duration-300 hover:border-b-2 border-gray-100"
                   >
-                    News
+                    Hotel
                   </a>
                 </li>
                 <li>
@@ -24,7 +24,7 @@ const Footer = () => {
                     href="/"
                     className="text-gray-100 transition-colors duration-300 hover:border-b-2 border-gray-100"
                   >
-                    World
+                    Restaurant
                   </a>
                 </li>
                 <li>
@@ -40,20 +40,22 @@ const Footer = () => {
                     href="/"
                     className="text-gray-100 transition-colors duration-300 hover:border-b-2 border-gray-100"
                   >
-                    References
+                    Culture
                   </a>
                 </li>
               </ul>
             </div>
             <div>
-              <p className="font-medium tracking-wide text-gray-300">Apples</p>
+              <p className="font-medium tracking-wide text-gray-300">
+                Locations
+              </p>
               <ul className="mt-2 space-y-2">
                 <li>
                   <a
                     href="/"
                     className="text-gray-100 transition-colors duration-300 hover:border-b-2 border-gray-100"
                   >
-                    Web
+                    Sitemap
                   </a>
                 </li>
                 <li>
@@ -61,7 +63,7 @@ const Footer = () => {
                     href="/"
                     className="text-gray-100 transition-colors duration-300 hover:border-b-2 border-gray-100"
                   >
-                    eCommerce
+                    City
                   </a>
                 </li>
                 <li>
@@ -69,29 +71,13 @@ const Footer = () => {
                     href="/"
                     className="text-gray-100 transition-colors duration-300 hover:border-b-2 border-gray-100"
                   >
-                    Business
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/"
-                    className="text-gray-100 transition-colors duration-300 hover:border-b-2 border-gray-100"
-                  >
-                    Entertainment
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/"
-                    className="text-gray-100 transition-colors duration-300 hover:border-b-2 border-gray-100"
-                  >
-                    Portfolio
+                    Country
                   </a>
                 </li>
               </ul>
             </div>
             <div>
-              <p className="font-medium tracking-wide text-gray-300">Cherry</p>
+              <p className="font-medium tracking-wide text-gray-300">Social</p>
               <ul className="mt-2 space-y-2">
                 <li>
                   <a
@@ -109,28 +95,13 @@ const Footer = () => {
                     Brochure
                   </a>
                 </li>
+
                 <li>
                   <a
                     href="/"
                     className="text-gray-100 transition-colors duration-300 hover:border-b-2 border-gray-100"
                   >
-                    Nonprofit
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/"
-                    className="text-gray-100 transition-colors duration-300 hover:border-b-2 border-gray-100"
-                  >
-                    Educational
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/"
-                    className="text-gray-100 transition-colors duration-300 hover:border-b-2 border-gray-100"
-                  >
-                    Projects
+                    Entertainment
                   </a>
                 </li>
               </ul>
@@ -145,7 +116,7 @@ const Footer = () => {
                     href="/"
                     className="text-gray-100 transition-colors duration-300 hover:border-b-2 border-gray-100"
                   >
-                    Infopreneur
+                    Reservations
                   </a>
                 </li>
                 <li>
@@ -161,7 +132,7 @@ const Footer = () => {
                     href="/"
                     className="text-gray-100 transition-colors duration-300 hover:border-b-2 border-gray-100"
                   >
-                    Wiki
+                    Vacation
                   </a>
                 </li>
                 <li>
@@ -175,7 +146,7 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className="md:max-w-md lg:col-span-2">
+          <div className="md:max-w-md lg:col-span-2 mt-4">
             <span className="text-base font-medium tracking-wide text-gray-300">
               Subscribe for updates
             </span>

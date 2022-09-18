@@ -1,6 +1,16 @@
+.c-card:hover {
+  box-shadow: 10px 10px 0px rgba(0, 0, 0, 1);
+  transition: all 0.23s linear;
+}
 .c-card img {
   transition: transform 0.3s ease-in-out;
 }
 .c-card:hover img {
   transform: scale(1.25);
+}
+.demo1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }

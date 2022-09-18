@@ -7,12 +7,12 @@ import { RiCloseLine } from "react-icons/ri";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <div className="bg-teal-500">
+    <div className="bg-green-500">
       <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div className="relative flex items-center justify-between">
           <Link to="/">
             <div className="flex justify-center items-center">
-              <FcHome style={{ fontSize: "2rem" }} />
+              <FcHome className="text-4xl" />
               <span className="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
                 bookmeup
               </span>
@@ -21,8 +21,8 @@ const Navbar = () => {
           <ul className="flex items-center hidden space-x-8 lg:flex ">
             <li>
               <Link
-                to="/"
-                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                to="/hotels"
+                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 "
               >
                 Hotels
               </Link>
@@ -30,7 +30,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/"
-                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 "
               >
                 Featured
               </Link>
@@ -38,19 +38,17 @@ const Navbar = () => {
             <li>
               <Link
                 to="/"
-                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 "
               >
-                Pricing
+                Contact
               </Link>
             </li>
             <li>
               <Link
                 to="/about"
-                // aria-label="About us"
-                // title="About us"
-                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 "
               >
-                About us
+                About
               </Link>
             </li>
             <li>
@@ -128,18 +126,16 @@ const Navbar = () => {
                           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 "
                           onClick={() => setIsMenuOpen(false)}
                         >
-                          Pricing
+                          Contact
                         </Link>
                       </li>
                       <li>
                         <Link to="/about">
                           <button
-                            aria-label="About us"
-                            title="About us"
                             className="font-medium tracking-wide text-gray-700 transition-colors duration-200 "
                             onClick={() => setIsMenuOpen(false)}
                           >
-                            About us
+                            About
                           </button>
                         </Link>
                       </li>
