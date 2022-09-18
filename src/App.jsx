@@ -5,8 +5,10 @@ import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
 import About from "./pages/About/About";
 import Home from "./pages/Home/Home";
+import HotelDetail from "./pages/Hotels/HotelDetail";
 import Hotels from "./pages/Hotels/Hotels";
 import Login from "./pages/Login/Login";
+import NotFound from "./pages/NotFound/NotFound";
 // import "./App.css";
 
 function App() {
@@ -17,7 +19,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/hotels" element={<Hotels />} />
+        <Route path="/hotels/:id" element={<HotelDetail />} />
         <Route path="/login" element={<Login />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </div>

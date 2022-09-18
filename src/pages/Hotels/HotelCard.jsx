@@ -1,6 +1,10 @@
 import React from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const HotelCard = ({ e }) => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location);
   console.log(e);
   const {
     _id,
@@ -18,9 +22,7 @@ const HotelCard = ({ e }) => {
   return (
     <div className="border-[2px] border-solid border-black p-3 my-4">
       <div>
-        {photos.map((e) => (
-          <img src={e} className="w-20 h-20 object-cover object-center" />
-        ))}
+        <img src={photos[0]} className="w-20 h-20 object-cover object-center" />
       </div>
       <div>
         <h1>
@@ -55,6 +57,12 @@ const HotelCard = ({ e }) => {
           ))}
         </ul>
       </div>
+      <button
+        onClick={() => navigate(`${location.pathname}/${_id}`)}
+        className="active:scale-[0.934] transition-all ease-linear duration-75 py-0 px-3 h-10 self-center bg-green-400 mt-4 rounded-md text-black hover:bg-green-500"
+      >
+        Book Now!
+      </button>
     </div>
   );
 };

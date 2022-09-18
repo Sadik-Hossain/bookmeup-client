@@ -7,6 +7,7 @@ import img4 from "../../assets/img4.jpg";
 import img5 from "../../assets/img5.jpg";
 import img6 from "../../assets/img6.jpg";
 import "./featured.css";
+
 const arr = [
   img1,
   img2,
@@ -87,6 +88,7 @@ const Featured = () => {
           <BsStars className="inline text-yellow-400" />
         </span>{" "}
       </h1>
+
       <div class="container px-5 py-24 mx-auto">
         <div class="flex flex-wrap -m-4">
           {arr.map((e, i) => (
