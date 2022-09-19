@@ -20,6 +20,7 @@ const HotelDetail = () => {
     rating,
     rooms,
   } = data;
+  console.log(rooms);
   return (
     <div>
       <h1>HotelDetail for : {id}</h1>
@@ -39,11 +40,12 @@ const HotelDetail = () => {
               <div className="flex">
                 <p>rooms:</p>
                 <ul>
-                  {rooms.map((e) => (
-                    <li className="bg-green-300 mx-2 inline-block px-1 rounded-md">
-                      {e}
-                    </li>
-                  ))}
+                  {rooms &&
+                    rooms.map((e) => (
+                      <li className="bg-green-300 mx-2 inline-block px-1 rounded-md">
+                        {e}
+                      </li>
+                    ))}
                 </ul>
               </div>
             </>

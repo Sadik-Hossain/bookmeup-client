@@ -6,6 +6,8 @@ import img2 from "../../assets/img2.jpg";
 import img3 from "../../assets/img3.jpg";
 import SearchField from "../SearchField/SearchField";
 
+const arr = [img1, img2, img3];
+
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
@@ -25,20 +27,14 @@ const responsive = {
     items: 1,
   },
 };
-const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
-  const {
-    carouselState: { currentSlide },
-  } = rest;
+const CaroItem = ({ img }) => {
   return (
-    <div className="carousel-button-group">
-      <button
-        className={currentSlide === 0 ? "disable" : ""}
-        onClick={() => previous()}
+    <div>
+      <img
+        src={img}
+        class="object-cover object-center w-full h-[30rem] "
+        alt=""
       />
-      <button onClick={() => next()} />
-      <button onClick={() => goToSlide(currentSlide + 1)}>
-        Go to any slide
-      </button>
     </div>
   );
 };
@@ -54,27 +50,9 @@ const Hero = () => {
         autoPlaySpeed={1000}
         arrows={false}
       >
-        <div>
-          <img
-            src={img1}
-            class="object-cover object-center w-full h-full block"
-            alt=""
-          />
-        </div>
-        <div className="w-auto ">
-          <img
-            src={img2}
-            class="object-cover object-center w-full h-full block"
-            alt=""
-          />
-        </div>
-        <div>
-          <img
-            src={img3}
-            class="object-cover object-center w-full h-full block"
-            alt=""
-          />
-        </div>
+        {arr.map((e) => (
+          <CaroItem img={e} />
+        ))}
       </Carousel>
       <SearchField />
     </div>

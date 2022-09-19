@@ -53,7 +53,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link to="/login">
-                <button className=" px-6 py-2  transition ease-in duration-200 uppercase rounded-full bg-white hover:bg-gray-800 hover:text-white border-2 border-gray-100 focus:outline-none ">
+                <button className=" px-6 py-2  transition ease-in duration-200 uppercase rounded-full bg-white hover:bg-indigo-500 hover:text-white border-2 border-gray-100 focus:outline-none ">
                   Login
                 </button>
               </Link>
@@ -142,7 +142,7 @@ const Navbar = () => {
                       <li>
                         <Link
                           to="/login"
-                          className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded bg-green-400  focus:shadow-outline focus:outline-none"
+                          className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded bg-green-500  focus:shadow-outline focus:outline-none"
                           aria-label="Sign up"
                           title="Sign up"
                           onClick={() => setIsMenuOpen(false)}

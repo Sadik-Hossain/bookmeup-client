@@ -1,15 +1,19 @@
 import React, { useState } from "react";
-import { HiOutlineEye } from "react-icons/hi";
-
 import { useForm } from "react-hook-form";
+import { HiOutlineEye } from "react-icons/hi";
+// import {
+//   useCreateUserWithEmailAndPassword,
+//   useUpdateProfile,
+// } from "react-firebase-hooks/auth";
+// import { useForm } from "react-hook-form";
 // import { auth } from "../../firebase.init";
 import { useNavigate } from "react-router-dom";
-// import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 
-const Login = () => {
+const Register = () => {
   const [a, setA] = useState(false);
-  // const [signInWithEmailAndPassword, user, loading, error] =
-  //   useSignInWithEmailAndPassword(auth);
+  //   const [createUserWithEmailAndPassword, user, loading, error] =
+  //     useCreateUserWithEmailAndPassword(auth);
+  //   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
   const navigate = useNavigate();
   const {
     register,
@@ -19,26 +23,51 @@ const Login = () => {
 
   const onSubmit = async (data) => {
     console.log(data.email, data.password);
-    // await signInWithEmailAndPassword(data.email, data.password);
+    // await createUserWithEmailAndPassword(data.email, data.password);
+    // await updateProfile({ displayName: data.name });
   };
 
-  // if (loading) {
-  //   return <p>Loading...</p>;
-  // }
+  //   if (error) {
+  //     return (
+  //       <div>
+  //         <p>Error: {error.message}</p>
+  //       </div>
+  //     );
+  //   }
+  //   if (loading) {
+  //     return <p>Loading...</p>;
+  //   }
 
   return (
-    <div className="p-4">
+    <div className="p-4 ">
+      {/* <h1 className="text-3xl text-center font-semibold">Register</h1> */}
       <form
         onSubmit={handleSubmit(onSubmit)}
         autoComplete="off"
         className="lg:w-1/3 md:w-1/2 sm:w-11/12 mx-auto  rounded-2xl border border-slate-500  mt-4 p-3"
       >
-        <h1 className="text-3xl text-center my-4">Login </h1>
-
+        <h1 className="text-3xl text-center my-4">Register </h1>
+        <input
+          className="w-full bg-white rounded border mb-4 border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+          type="text"
+          placeholder="enter name"
+          {...register("name", {
+            required: {
+              value: true,
+              message: "name is Required",
+            },
+          })}
+        />
+        {errors.name?.type === "required" && (
+          <span className=" text-red-500">{errors.name.message}</span>
+        )}
+        {errors.email?.type === "pattern" && (
+          <span className=" text-red-500">{errors.email.message}</span>
+        )}
         <input
           className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-          type="text"
-          placeholder="enter Email"
+          type="email"
+          placeholder="enter email"
           {...register("email", {
             required: {
               value: true,
@@ -75,8 +104,8 @@ const Login = () => {
               },
               pattern: {
                 value:
-                  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,30}$/,
-                message: "please add letter + number",
+                  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{6,30}$/,
+                message: "please add letter, number, special character",
               },
             })}
           />
@@ -92,22 +121,20 @@ const Login = () => {
         {errors.password?.type === "pattern" && (
           <span className=" text-red-500">{errors.password.message}</span>
         )}
-
         <input
           type="submit"
           className="w-full text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg"
-          value="Login"
+          value="Register"
         />
-        {/* {error && <p className="text-red-500">Error: {error.message}</p>} */}
         <p
           className="font-semibold text-center cursor-pointer hover:text-green-500 my-3"
-          onClick={() => navigate("/register")}
+          onClick={() => navigate("/login")}
         >
-          New here? Register
+          Already registered? login
         </p>
       </form>
     </div>
   );
 };
 
-export default Login;
+export default Register;

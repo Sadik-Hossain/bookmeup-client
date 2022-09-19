@@ -8,6 +8,7 @@ import Home from "./pages/Home/Home";
 import HotelDetail from "./pages/Hotels/HotelDetail";
 import Hotels from "./pages/Hotels/Hotels";
 import Login from "./pages/Login/Login";
+import Register from "./pages/Login/Register";
 import NotFound from "./pages/NotFound/NotFound";
 // import "./App.css";
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/hotels" element={<Hotels />} />
         <Route path="/hotels/:id" element={<HotelDetail />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
