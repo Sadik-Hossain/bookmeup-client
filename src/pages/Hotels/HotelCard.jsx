@@ -21,32 +21,30 @@ const HotelCard = ({ e }) => {
     rooms,
   } = e;
   return (
-    <div className="border-[2px] border-solid border-black p-3 my-4  lg:flex lg:flex-row lg:justify-between md:flex md:flex-row   md:justify-between md:gap-4 flex flex-col items-center">
+    <div className="border border-solid border-black p-3 my-4  mx-3 rounded-md lg:flex lg:flex-row lg:justify-between md:flex md:flex-row   md:justify-between md:gap-4 flex flex-col items-center">
       {/* 
       //* --------------- left --------------------
       */}
-      <div className="border-2 border-black p-4 ">
-        <div className="border-2 border-black ">
+      <div className="p-4 ">
+        <div>
           <img src={img1} className="w-48 h-48 object-cover object-center" />
         </div>
       </div>
       {/* 
       //* --------------- right ------------------
       */}
-      <div className="border-2 border-black px-4 w-3/4">
-        <p>
+      <div className=" lg:px-4 lg:w-3/4 md:px-4 md:w-3/4 w-full">
+        <p className=" leading-8">
           <b>Hotel:</b> {HotelName}
         </p>
-        <p>
-          <b>price:</b> <b>$</b>
-          {cheapestPrice}
-        </p>
-        <p>
-          <b>city:</b> {city}
-        </p>
-        <p>
+
+        <p className=" leading-8">
           <b>country:</b> {country}
         </p>
+        <p className=" leading-8">
+          <b>city:</b> {city}
+        </p>
+
         <p className="flex items-center">
           <b>ratings:</b>&nbsp;
           <ReactStars
@@ -57,12 +55,20 @@ const HotelCard = ({ e }) => {
             edit={false}
             half={true}
           />
-          {/* {rating}
-          <AiTwotoneStar className="inline-block align-top text-xl" /> */}
         </p>
-        <p className="demo1">
-          <span className="font-bold  demo1">desc:</span> {desc}
+        <p className=" leading-8">
+          <b>price:</b> <b>$</b>
+          {cheapestPrice}
         </p>
+        <p className="demo1 leading-6">
+          <span className="font-bold  demo1">description:</span> {desc}
+        </p>
+        <button
+          onClick={() => navigate(`${location.pathname}/${_id}`)}
+          className="active:scale-[0.934] transition-all ease-linear duration-75 py-0 px-3 h-10 self-center bg-green-400 mt-4 rounded-md text-black hover:bg-green-500"
+        >
+          Book Now!
+        </button>
       </div>
     </div>
   );

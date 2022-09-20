@@ -21,9 +21,9 @@ max: 0
 min: 0
  */
 
-  const [country, setCountry] = useState("");
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date());
+  const [country, setCountry] = useState(a.country);
+  const [startDate, setStartDate] = useState(a.startDate);
+  const [endDate, setEndDate] = useState(a.endDate);
   const onChange = (dates) => {
     const [start, end] = dates;
     const a = new Date(start).getTime();
@@ -41,7 +41,7 @@ min: 0
     setMin1(min);
     setMax1(max);
   };
-  console.log(`min = ${min1}, max = ${max1}`);
+  // console.log(`min = ${min1}, max = ${max1}`);
 
   const handleClick = async (e) => {
     e.preventDefault();
@@ -82,6 +82,7 @@ min: 0
               name="full-name"
               className="w-full  rounded border  border-black outline-green-400  text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
               onChange={handleChange}
+              value={country}
             />
             <datalist id="e">
               {countries.map((e, i) => (

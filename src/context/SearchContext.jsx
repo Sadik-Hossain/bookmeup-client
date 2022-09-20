@@ -1,9 +1,9 @@
 import { createContext, useReducer } from "react";
 
 const INITIAL_STATE = {
-  country: undefined,
-  startDate: undefined,
-  endDate: undefined,
+  country: "",
+  startDate: new Date(),
+  endDate: new Date(),
   min1: 0,
   max1: 1000,
 };

@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
+import Loader from "../../components/Loader/Loader";
 import SearchField from "../../components/SearchField/SearchField";
 import { SearchContext } from "../../context/SearchContext";
 import useFetch from "../../hooks/useFetch";
@@ -30,10 +31,12 @@ const Hotels = () => {
       {error && <h1>{error.message}</h1>}
 
       {loading ? (
-        <h1>loading...</h1>
+        <h1>
+          <Loader />
+        </h1>
       ) : (
         <>
-          <h1 className="text-center text-2xl font-bold my-6 capitalize">
+          <h1 className="text-center text-3xl font-bold my-6 capitalize">
             hotels found: {data.length}
           </h1>
           {data.length &&
