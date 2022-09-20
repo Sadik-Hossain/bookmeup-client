@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -6,21 +6,34 @@ import "./SearchField.css";
 import { countries } from "../../../public/country";
 import Range from "./rangeSlider/Range";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { SearchContext } from "../../context/SearchContext";
 
 const SearchField = () => {
-  const [place, setPlace] = useState("");
+  const navigate = useNavigate();
+  const a = useContext(SearchContext);
+  const { dispatch } = a;
+  /* 
+country: undefined
+dates: []
+dispatch: fn()
+max: 0
+min: 0
+ */
+
+  const [country, setCountry] = useState("");
   const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(0);
+  const [endDate, setEndDate] = useState(new Date());
   const onChange = (dates) => {
     const [start, end] = dates;
     const a = new Date(start).getTime();
     const b = new Date(end).getTime();
     setStartDate(start);
     setEndDate(end);
-    console.log(a, b);
+    // console.log(a, b);
   };
   const handleChange = (e) => {
-    setPlace(e.target.value);
+    setCountry(e.target.value);
   };
   const [min1, setMin1] = useState(0);
   const [max1, setMax1] = useState(0);
@@ -34,20 +47,31 @@ const SearchField = () => {
     e.preventDefault();
     const a = new Date(startDate).getTime();
     const b = new Date(endDate).getTime();
-    console.log(place, a, b, min1, max1);
-
-    const result = await axios.get(
-      `http://localhost:5000/api/hotel?country=${place}&min=${min1}&max=${max1}&startdate=${a}&enddate=${b}`
-    );
-    console.log(result.data);
+    console.log(country, a, b, min1, max1);
+    dispatch({
+      type: "NEW_SEARCH",
+      payload: { country, startDate, endDate, min1, max1 },
+    });
+    navigate("/hotels", { state: { country, startDate, endDate, min1, max1 } });
+    // const result = await axios.get(
+    //   `http://localhost:5000/api/hotel?country=${country}&min=${min1}&max=${max1}&startdate=${a}&enddate=${b}`
+    // );
+    // console.log(result.data);
   };
   //* var one_day = 1000 * 60 * 60 * 24
   //* day calc = (b-a)/one_day
+  // const handleSearch = () => {
+  //   dispatch({
+  //     type: "NEW_SEARCH",
+  //     payload: { country, startDate, endDate, min1, max1 },
+  //   });
+  //   navigate("/hotels", { state: { country, startDate, endDate, min1, max1 } });
+  // };
   return (
-    <section className="text-gray-600 ">
-      <div className="px-2  mx-auto">
-        <div className="rounded-lg bg-green-400 flex w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">
-          <div className="relative flex-grow w-full p-3">
+    <section className="border border-black mt-4">
+      <div className="px-2  mx-auto  bg-green-400">
+        <div className="rounded-lg flex w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">
+          <div className="relative flex-grow w-full p-3 ">
             <label for="country" className="leading-7 text-sm text-black">
               Enter Country:
             </label>
@@ -65,7 +89,7 @@ const SearchField = () => {
               ))}
             </datalist>
           </div>
-          <div className="relative flex-grow w-full p-3">
+          <div className="relative flex-grow w-full p-3 ">
             <label
               for="date"
               className={`leading-7 text-sm ${
@@ -110,7 +134,7 @@ const SearchField = () => {
 
             <Range min={0} max={1000} onChange={handleRange} />
           </div>
-          <div className="p-3 w-full self-center">
+          <div className="p-3 w-full self-center ">
             <button
               onClick={handleClick}
               className="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg w-full active:scale-[0.967]"

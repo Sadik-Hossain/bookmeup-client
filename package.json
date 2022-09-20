@@ -17,7 +17,8 @@
     "react-icons": "^4.4.0",
     "react-multi-carousel": "^2.8.2",
     "react-rating-stars-component": "^2.2.0",
-    "react-router-dom": "^6.3.0"
+    "react-router-dom": "^6.3.0",
+    "react-stars": "^2.2.5"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",
