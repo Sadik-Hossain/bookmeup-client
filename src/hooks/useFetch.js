@@ -10,7 +10,8 @@ const useFetch = (url) => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const res = await axios.get(`http://localhost:5000${url}`);
+        // const res = await axios.get(`http://localhost:5000${url}`);
+        const res = await axios.get(`https://bookmeup-server.vercel.app${url}`);
         setData(res.data);
         setLoading(false);
       } catch (error) {

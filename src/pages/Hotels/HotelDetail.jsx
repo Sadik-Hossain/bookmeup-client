@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import Loader from "../../components/Loader/Loader";
 import useFetch from "../../hooks/useFetch";
 
 const HotelDetail = () => {
@@ -25,12 +26,15 @@ const HotelDetail = () => {
     <div>
       <h1>HotelDetail for : {id}</h1>
       {loading ? (
-        <h1>loading...</h1>
+        <h1>
+          <Loader />
+        </h1>
       ) : (
         <>
           {data && (
             <>
               <h1>{HotelName}</h1>
+              <img src={photos} alt="" />
               <h1>{address}</h1>
               <h1>{cheapestPrice}</h1>
               <h1>{city}</h1>
