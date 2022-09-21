@@ -50,7 +50,7 @@ const arr = [
 ];
 const Card = ({ img }) => {
   return (
-    // <div class="lg:w-1/3 sm:w-1/2 p-8 ">
+    // <div className="lg:w-1/3 sm:w-1/2 p-8 ">
     <div className="border rounded-xl border-black c-card overflow-hidden mx-4">
       <div className="c-card overflow-hidden">
         <img
@@ -59,10 +59,10 @@ const Card = ({ img }) => {
           src={img}
         />
       </div>
-      <div class="px-8 py-4 w-full   bg-white ">
+      <div className="px-8 py-4 w-full   bg-white ">
         <div className="flex justify-between items-center">
           <div className="mb-2">
-            <h2 class=" text-md text-ellipsis overflow-hidden whitespace-nowrap max-w-[10ch] font-bold text-black ">
+            <h2 className=" text-md text-ellipsis overflow-hidden whitespace-nowrap max-w-[10ch] font-bold text-black ">
               Berlin
             </h2>
             <p>Germany</p>
@@ -72,7 +72,7 @@ const Card = ({ img }) => {
             <BsFillStarFill className=" mx-3 text-yellow-400" />
           </div>
         </div>
-        <h1 class="  text-ellipsis overflow-hidden whitespace-nowrap text-lg font-medium text-black ">
+        <h1 className="  text-ellipsis overflow-hidden whitespace-nowrap text-lg font-medium text-black ">
           Morning Stars Hotel
         </h1>
 
@@ -103,7 +103,7 @@ const Card = ({ img }) => {
 };
 const Featured = () => {
   return (
-    <section class="text-gray-600 ">
+    <section className="text-gray-600 ">
       <h1 className="text-[2rem] text-black text-center mt-16 ">
         Fetured Hotel
         <span>
@@ -111,8 +111,8 @@ const Featured = () => {
         </span>
       </h1>
 
-      <div class="container px-5 py-20 mx-auto">
-        {/* <div class="flex flex-wrap -m-4">
+      <div className="container px-5 py-20 mx-auto">
+        {/* <div className="flex flex-wrap -m-4">
           {arr.map((e, i) => (
             <Card img={e} key={i} />
           ))}

@@ -32,7 +32,7 @@ const CaroItem = ({ img }) => {
     <div>
       <img
         src={img}
-        class="object-cover object-center w-full h-[30rem] "
+        className="object-cover object-center w-full h-[30rem] "
         alt=""
       />
     </div>

@@ -6,7 +6,7 @@ const HotelCard = ({ e }) => {
   const navigate = useNavigate();
   const location = useLocation();
   // console.log(location);
-  console.log(e);
+  // console.log(e);
   const {
     _id,
     HotelName,
@@ -45,7 +45,7 @@ const HotelCard = ({ e }) => {
           <b>city:</b> {city}
         </p>
 
-        <p className="flex items-center">
+        <div className="flex items-center">
           <b>ratings:</b>&nbsp;
           <ReactStars
             count={5}
@@ -55,7 +55,7 @@ const HotelCard = ({ e }) => {
             edit={false}
             half={true}
           />
-        </p>
+        </div>
         <p className=" leading-8">
           <b>price:</b> <b>$</b>
           {cheapestPrice}

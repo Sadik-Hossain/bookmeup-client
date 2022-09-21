@@ -1,6 +1,13 @@
-import React, { useCallback, useEffect, useState, useRef } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useState,
+  useRef,
+  useContext,
+} from "react";
 import PropTypes from "prop-types";
 import "./range.css";
+import { SearchContext } from "../../../context/SearchContext";
 
 const Range = ({ min, max, onChange }) => {
   const [minVal, setMinVal] = useState(min);

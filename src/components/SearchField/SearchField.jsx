@@ -22,16 +22,16 @@ min: 0
  */
 
   const [country, setCountry] = useState(a.country);
-  const [startDate, setStartDate] = useState(a.startDate);
-  const [endDate, setEndDate] = useState(a.endDate);
-  const onChange = (dates) => {
-    const [start, end] = dates;
-    const a = new Date(start).getTime();
-    const b = new Date(end).getTime();
-    setStartDate(start);
-    setEndDate(end);
-    // console.log(a, b);
-  };
+  // const [startDate, setStartDate] = useState(a.startDate);
+  // const [endDate, setEndDate] = useState(a.endDate);
+  // const onChange = (dates) => {
+  //   const [start, end] = dates;
+  //   const a = new Date(start).getTime();
+  //   const b = new Date(end).getTime();
+  //   setStartDate(start);
+  //   setEndDate(end);
+  //   // console.log(a, b);
+  // };
   const handleChange = (e) => {
     setCountry(e.target.value);
   };
@@ -45,14 +45,15 @@ min: 0
 
   const handleClick = async (e) => {
     e.preventDefault();
-    const a = new Date(startDate).getTime();
-    const b = new Date(endDate).getTime();
-    console.log(country, a, b, min1, max1);
+    // const a = new Date(startDate).getTime();
+    // const b = new Date(endDate).getTime();
+    console.log(country, min1, max1);
     dispatch({
       type: "NEW_SEARCH",
-      payload: { country, startDate, endDate, min1, max1 },
+      payload: { country, min1, max1 },
     });
-    navigate("/hotels", { state: { country, startDate, endDate, min1, max1 } });
+    // navigate("/hotels", { state: { country, startDate, endDate, min1, max1 } });
+    navigate("/hotels");
     // const result = await axios.get(
     //   `http://localhost:5000/api/hotel?country=${country}&min=${min1}&max=${max1}&startdate=${a}&enddate=${b}`
     // );
@@ -72,7 +73,7 @@ min: 0
       <div className="px-2  mx-auto  bg-green-400">
         <div className="rounded-lg flex w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">
           <div className="relative flex-grow w-full p-3 ">
-            <label for="country" className="leading-7 text-sm text-black">
+            <label htmlFor="country" className="leading-7 text-sm text-black">
               Enter Country:
             </label>
             <input
@@ -90,9 +91,9 @@ min: 0
               ))}
             </datalist>
           </div>
-          <div className="relative flex-grow w-full p-3 ">
+          {/* <div className="relative flex-grow w-full p-3 ">
             <label
-              for="date"
+              htmlFor="date"
               className={`leading-7 text-sm ${
                 !startDate || !endDate ? "text-red-600 font-bold" : "text-black"
               }`}
@@ -114,7 +115,7 @@ min: 0
                 dateFormat="dd/MM/yyyy"
               />
             </div>
-          </div>
+          </div> */}
           <div className="relative flex-grow w-full p-3 ">
             <label className="leading-7 text-center text-sm text-black ">
               price range:&nbsp;
@@ -183,7 +184,7 @@ export default SearchField;
 //       <form onSubmit={handleSubmit}>
 //         <div className=" flex lg:justify-evenly lg:items-stretch  md:justify-evenly  sm:flex-col md:flex-col">
 //           <div className="relative flex-grow w-full p-3">
-//             <label htmlFor="place">Enter Country:</label>
+//             <label htmlhtmlFor="place">Enter Country:</label>
 //             <input
 //               list="e"
 //               name="place"
@@ -217,7 +218,7 @@ export default SearchField;
 //             </div>
 //           </div>
 //           <div>
-//             <label htmlFor="price">Enter price range:&nbsp;</label>
+//             <label htmlhtmlFor="price">Enter price range:&nbsp;</label>
 
 //             <input
 //               type="range"

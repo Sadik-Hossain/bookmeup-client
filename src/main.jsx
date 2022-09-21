@@ -6,11 +6,11 @@ import { SearchContextProvider } from "./context/SearchContext";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <SearchContextProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </SearchContextProvider>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <SearchContextProvider>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </SearchContextProvider>
+  // </React.StrictMode>
 );

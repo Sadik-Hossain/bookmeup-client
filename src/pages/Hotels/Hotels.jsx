@@ -18,9 +18,9 @@ const Hotels = () => {
   // });
   // console.log(location);
   const a = useContext(SearchContext);
-  console.log(a);
+  // console.log(a);
   const { country, min1, max1 } = a;
-  console.log(country, min1, max1);
+  // console.log(country, min1, max1);
   const { data, loading, error } = useFetch(
     `/api/hotel?country=${country}&min=${min1}&max=${max1}`
   );
