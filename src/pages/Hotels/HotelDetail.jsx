@@ -8,6 +8,7 @@ import ReactStars from "react-stars";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { SearchContext } from "../../context/SearchContext";
+import Map from "../../components/Map/Map";
 
 // const Gallery = () => {
 //   return (
@@ -337,8 +338,12 @@ const HotelDetail = () => {
                   </div>
                 </div>
               </div>
+
               {/* <Gallery />
               <Pricing /> */}
+              <div className="flex justify-center items-center border">
+                <Map />
+              </div>
             </>
           )}
         </>
