@@ -35,7 +35,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="relative border-2 border-red-500 ">
+    <div className="relative  ">
       <div
         className={` bg-gray-800 inset-0 overflow-y-auto absolute  leading-loose ${
           x ? "w-40" : "w-14"
