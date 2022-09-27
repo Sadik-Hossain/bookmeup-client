@@ -21,7 +21,7 @@ const HotelCard = ({ e }) => {
     rooms,
   } = e;
   return (
-    <div className="border border-solid border-black p-3 my-4  mx-3 rounded-md lg:flex lg:flex-row lg:justify-between md:flex md:flex-row   md:justify-between md:gap-4 flex flex-col items-center">
+    <div className="border-2 border-solid border-slate-200 p-3 my-12   rounded-md lg:flex lg:flex-row w-10/12 mx-auto lg:justify-between md:flex md:flex-row   md:justify-between md:gap-4 flex flex-col items-center shadow-lg ">
       {/* 
       //* --------------- left --------------------
       */}

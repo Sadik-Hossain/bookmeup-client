@@ -25,6 +25,7 @@ React, TailwindCSS, axios, react icon, toastify, react hook form, react router, 
 - Date picking resevation
 - Payment integration
 - Custom hook & Context API
+- Google map
 
 ## Feedback
 
