@@ -2,6 +2,8 @@
 
 This is booking service app, user can view hotels based on price filtering and various country. User can also make a reservation in a hotel on specific dates using datepicker.
 
+#### live-site: https://bookmeup.netlify.app/
+
 ## Authors
 
 - [Sadik-Hossain](https://github.com/Sadik-Hossain)
