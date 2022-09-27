@@ -10,7 +10,7 @@ This is booking service app, user can view hotels based on price filtering and v
 
 ## Screenshots
 
-![App Screenshot](https://i.ibb.co/6vqSdtL/bookmeup-1.jpg)
+![App Screenshot](https://res.cloudinary.com/sadik-cloud/image/upload/v1664286936/git-proj-img/bookmeup_f5h6it.jpg)
 
 ## Tech & Tools
 
