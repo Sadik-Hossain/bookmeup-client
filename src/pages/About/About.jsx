@@ -1,13 +1,13 @@
 const About = () => {
   return (
     <div className="flex flex-wrap justify-center">
-      <a href="#!" data-mdb-ripple="true">
-        <img
-          src="https://mdbootstrap.com/img/new/standard/city/043.jpg"
-          className="max-w-sm h-auto"
-          alt=""
-        />
-      </a>
+      <h1 className="text-3xl font-semibold">this is a protected route</h1>
+      <p className="leading-loose">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
+        perferendis tenetur consequatur sint deleniti velit quo ducimus,
+        necessitatibus quaerat. Hic nobis nihil fugit sint officiis repellendus
+        voluptate error cum non.
+      </p>
     </div>
   );
 };

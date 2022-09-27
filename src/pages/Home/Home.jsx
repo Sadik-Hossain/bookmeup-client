@@ -7,7 +7,7 @@ const Home = () => {
     <div>
       <Hero />
       <Featured />
-      <HomeCard />
+      {/* <HomeCard /> */}
     </div>
   );
 };

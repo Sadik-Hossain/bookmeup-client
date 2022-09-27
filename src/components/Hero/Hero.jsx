@@ -50,8 +50,8 @@ const Hero = () => {
         autoPlaySpeed={1000}
         arrows={false}
       >
-        {arr.map((e) => (
-          <CaroItem img={e} />
+        {arr.map((e, i) => (
+          <CaroItem img={e} key={i} />
         ))}
       </Carousel>
       <SearchField />

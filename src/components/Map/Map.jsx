@@ -9,24 +9,14 @@ const Map = ({ map }) => {
           width="100%"
           height="400"
           id="gmap_canvas"
-          allowfullscreen=""
+          allowFullScreen=""
           loading="lazy"
-          frameborder="0"
+          frameBorder="0"
           scrolling="no"
-          marginheight="0"
-          marginwidth="0"
-          referrerpolicy="no-referrer-when-downgrade"
+          marginHeight="0"
+          marginWidth="0"
+          referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
-        {/* <iframe
-          width="100%"
-          height="400"
-          id="gmap_canvas"
-          src={map}
-          frameborder="0"
-          scrolling="no"
-          marginheight="0"
-          marginwidth="0"
-        ></iframe> */}
       </div>
     </div>
   );

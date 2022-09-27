@@ -1,19 +1,14 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { HiOutlineEye } from "react-icons/hi";
-// import {
-//   useCreateUserWithEmailAndPassword,
-//   useUpdateProfile,
-// } from "react-firebase-hooks/auth";
-// import { useForm } from "react-hook-form";
-// import { auth } from "../../firebase.init";
 import { useNavigate } from "react-router-dom";
+import useFetch from "../../hooks/useFetch";
 
 const Register = () => {
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [a, setA] = useState(false);
-  //   const [createUserWithEmailAndPassword, user, loading, error] =
-  //     useCreateUserWithEmailAndPassword(auth);
-  //   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
   const navigate = useNavigate();
   const {
     register,
@@ -22,9 +17,23 @@ const Register = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
-    console.log(data.email, data.password);
-    // await createUserWithEmailAndPassword(data.email, data.password);
-    // await updateProfile({ displayName: data.name });
+    console.log(data.name, data.email, data.password);
+
+    try {
+      setLoading(true);
+      setError(null);
+      const res = await axios.post("http://localhost:5000/api/auth/register", {
+        name: data.name,
+        email: data.email,
+        password: data.password,
+      });
+      setLoading(false);
+      console.log(res.data);
+    } catch (error) {
+      setLoading(false);
+      console.log(error.response);
+      setError(error);
+    }
   };
 
   //   if (error) {
@@ -40,13 +49,17 @@ const Register = () => {
 
   return (
     <div className="p-4 ">
-      {/* <h1 className="text-3xl text-center font-semibold">Register</h1> */}
       <form
         onSubmit={handleSubmit(onSubmit)}
-        autoComplete="off"
+        autoComplete="on"
         className="lg:w-1/3 md:w-1/2 sm:w-11/12 mx-auto  rounded-2xl border border-slate-500  mt-4 p-3"
       >
         <h1 className="text-3xl text-center my-4">Register </h1>
+        {error && (
+          <p className="text-sm text-center text-red-500">
+            {error.response.data}
+          </p>
+        )}
         <input
           className="w-full bg-white rounded border mb-4 border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
           type="text"
@@ -105,7 +118,8 @@ const Register = () => {
               pattern: {
                 value:
                   /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{6,30}$/,
-                message: "please add letter, number, special character",
+                message:
+                  "please add uppercase,lowercase, number, special character",
               },
             })}
           />
@@ -124,7 +138,7 @@ const Register = () => {
         <input
           type="submit"
           className="w-full text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg"
-          value="Register"
+          value={loading ? "loading..." : "Register"}
         />
         <p
           className="font-semibold text-center cursor-pointer hover:text-green-500 my-3"

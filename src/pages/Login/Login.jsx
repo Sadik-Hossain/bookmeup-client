@@ -1,13 +1,19 @@
-import React, { useState } from "react";
+import { useContext, useState } from "react";
+import axios from "axios";
+import { AuthContext } from "../../context/AuthContext";
 import { HiOutlineEye } from "react-icons/hi";
-
 import { useForm } from "react-hook-form";
 // import { auth } from "../../firebase.init";
 import { useNavigate } from "react-router-dom";
 // import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 
 const Login = () => {
+  const { loading, error, dispatch } = useContext(AuthContext);
   const [a, setA] = useState(false);
+  // const [credentials, setCredentials] = useState({
+  //   username: undefined,
+  //   password: undefined,
+  // });
   // const [signInWithEmailAndPassword, user, loading, error] =
   //   useSignInWithEmailAndPassword(auth);
   const navigate = useNavigate();
@@ -17,14 +23,25 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
+  // const onSubmit = async (data) => {
+  //   console.log(data.email, data.password);
+  //   // await signInWithEmailAndPassword(data.email, data.password);
+  // };
   const onSubmit = async (data) => {
     console.log(data.email, data.password);
-    // await signInWithEmailAndPassword(data.email, data.password);
-  };
 
-  // if (loading) {
-  //   return <p>Loading...</p>;
-  // }
+    dispatch({ type: "LOGIN_START" });
+    try {
+      const res = await axios.post("http://localhost:5000/api/auth/login", {
+        email: data.email,
+        password: data.password,
+      });
+      dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
+      navigate("/");
+    } catch (err) {
+      dispatch({ type: "LOGIN_FAILURE", payload: err.response.data });
+    }
+  };
 
   return (
     <div className="p-4">
@@ -73,11 +90,11 @@ const Login = () => {
                 value: 6,
                 message: "Must be 6 characters or longer",
               },
-              pattern: {
-                value:
-                  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,30}$/,
-                message: "please add letter + number",
-              },
+              // pattern: {
+              //   value:
+              //     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,30}$/,
+              //   message: "please add letter + number",
+              // },
             })}
           />
 
@@ -92,11 +109,15 @@ const Login = () => {
         {errors.password?.type === "pattern" && (
           <span className=" text-red-500">{errors.password.message}</span>
         )}
-
+        {error && (
+          <h1 className="text-red-500 font-semibold text-center">
+            {error.message}
+          </h1>
+        )}
         <input
           type="submit"
           className="w-full text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg"
-          value="Login"
+          value={loading ? "loading..." : "Login"}
         />
         {/* {error && <p className="text-red-500">Error: {error.message}</p>} */}
         <p

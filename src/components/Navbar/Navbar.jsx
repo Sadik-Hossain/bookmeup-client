@@ -3,9 +3,18 @@ import { Link } from "react-router-dom";
 import { TiThMenu } from "react-icons/ti";
 import { FcHome } from "react-icons/fc";
 import { RiCloseLine } from "react-icons/ri";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { loading, error, user, dispatch } = useContext(AuthContext);
+  console.log(user);
+
+  const HandleLogout = () => {
+    dispatch({ type: "LOGOUT" });
+  };
+
   return (
     <div className="bg-green-400">
       <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
@@ -52,11 +61,20 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link to="/login">
-                <button className=" px-6 py-2  transition ease-in duration-200 uppercase rounded-full bg-white hover:bg-indigo-500 hover:text-white border-2 border-gray-100 focus:outline-none ">
-                  Login
+              {user ? (
+                <button
+                  onClick={HandleLogout}
+                  className=" px-6 py-2  transition ease-in duration-200 uppercase rounded-full bg-white hover:bg-indigo-500 hover:text-white border-2 border-gray-100 focus:outline-none "
+                >
+                  Logout
                 </button>
-              </Link>
+              ) : (
+                <Link to="/login">
+                  <button className=" px-6 py-2  transition ease-in duration-200 uppercase rounded-full bg-white hover:bg-indigo-500 hover:text-white border-2 border-gray-100 focus:outline-none ">
+                    Login
+                  </button>
+                </Link>
+              )}
             </li>
           </ul>
           <div className=" lg:hidden ">
@@ -140,15 +158,26 @@ const Navbar = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link
-                          to="/login"
-                          className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded bg-green-400  focus:shadow-outline focus:outline-none"
-                          aria-label="Sign up"
-                          title="Sign up"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          Sign up
-                        </Link>
+                        {user ? (
+                          <button
+                            onClick={HandleLogout}
+                            className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded bg-green-400  focus:shadow-outline focus:outline-none"
+                            aria-label="logout"
+                            title="logout"
+                          >
+                            Logout
+                          </button>
+                        ) : (
+                          <Link
+                            to="/login"
+                            className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded bg-green-400  focus:shadow-outline focus:outline-none"
+                            aria-label="Sign up"
+                            title="Sign up"
+                            onClick={() => setIsMenuOpen(false)}
+                          >
+                            Login
+                          </Link>
+                        )}
                       </li>
                     </ul>
                   </nav>
