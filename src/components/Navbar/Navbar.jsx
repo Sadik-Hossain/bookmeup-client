@@ -19,7 +19,7 @@ const Navbar = () => {
 
   return (
     <div className="bg-green-400">
-      <div className="px-4 py-2 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+      <div className="px-4 py-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div className="relative flex items-center justify-between">
           <Link to="/">
             <div className="flex justify-center items-center">
@@ -73,7 +73,7 @@ const Navbar = () => {
                 //   Logout
                 // </button>
                 <Link to="/login">
-                  <button className=" px-6 py-2  transition ease-in duration-200 uppercase rounded-full bg-white hover:bg-indigo-500 hover:text-white border-2 border-gray-100 focus:outline-none ">
+                  <button className=" px-4 py-1  transition ease-in duration-200 uppercase rounded-full bg-white hover:bg-indigo-500 hover:text-white border-2 border-gray-100 focus:outline-none ">
                     Login
                   </button>
                 </Link>

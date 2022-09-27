@@ -1,8 +1,8 @@
 import React from "react";
 import { useContext } from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
-
 const Avatar = () => {
   const { loading, error, user, dispatch } = useContext(AuthContext);
   // console.log(user?.username);
@@ -13,7 +13,7 @@ const Avatar = () => {
 
   return (
     <>
-      <div class="flex justify-end p-3">
+      <div class="flex justify-end">
         <div>
           <div class=" relative">
             <button
@@ -95,7 +95,8 @@ const Avatar = () => {
                 </h6>
                 <hr />
                 <li>
-                  <a
+                  <Link
+                    to="/dashboard"
                     class="
                 dropdown-item
                 text-sm
@@ -112,10 +113,11 @@ const Avatar = () => {
                     href="#"
                   >
                     Dashboard
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
+                    to="/profile"
                     class="
                 dropdown-item
                 text-sm
@@ -132,7 +134,7 @@ const Avatar = () => {
                     href="#"
                   >
                     Profile
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <button
