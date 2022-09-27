@@ -11,7 +11,7 @@ export const FeaturedCard = ({ data }) => {
       <div className="c-card overflow-hidden">
         <img
           alt="gallery"
-          className="lg:h-56 md:h-48 w-full object-cover object-center "
+          className="lg:h-56 md:h-48 h-48 w-full object-cover object-center "
           src={photos}
         />
       </div>

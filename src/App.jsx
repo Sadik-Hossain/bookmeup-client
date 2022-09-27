@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { Route, Routes } from "react-router-dom";
 import reactLogo from "./assets/react.svg";
 import Footer from "./components/Footer/Footer";
@@ -26,6 +28,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
+      <ToastContainer />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 import { HiOutlineEye } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
@@ -15,7 +16,7 @@ const Register = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-
+  // const notify = () => toast("Wow so easy!");
   const onSubmit = async (data) => {
     console.log(data.name, data.email, data.password);
 
@@ -28,7 +29,17 @@ const Register = () => {
         password: data.password,
       });
       setLoading(false);
-      console.log(res.data);
+      // toast(res.data);
+      toast.success(res.data, {
+        position: "top-center",
+        autoClose: 3500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      navigate("/login");
     } catch (error) {
       setLoading(false);
       console.log(error.response);
