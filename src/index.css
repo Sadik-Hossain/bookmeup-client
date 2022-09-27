@@ -8,6 +8,28 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #dedede;
+  width: 2px;
+  outline: red;
+  border-radius: 0.5rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 body {
   font-family: "Poppins", sans-serif;
 }

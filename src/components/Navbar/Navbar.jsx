@@ -11,7 +11,7 @@ import Avatar from "../Avatar/Avatar";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { loading, error, user, dispatch } = useContext(AuthContext);
-  console.log(user);
+  // console.log(user);
 
   const HandleLogout = () => {
     dispatch({ type: "LOGOUT" });

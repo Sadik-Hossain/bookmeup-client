@@ -248,11 +248,11 @@ const HotelDetail = () => {
                   </div>
                 </div>
               </div>
-              <h1 className="text-2xl font-bold mt-4 ml-4">
+              <h1 className="text-2xl font-bold my-8 ml-4">
                 Details about the hotel:
               </h1>
-              <div className="flex flex-wrap md:flex-row gap-3 my-3 mx-4">
-                <div className="p-4 leading-8 lg:w-1/2 md:w-1/2 w-full lg:ml-4 border-2 border-black rounded-md">
+              <div className="flex flex-wrap md:flex-row gap-6 my-3 mx-4">
+                <div className="p-4 leading-8 lg:w-1/2 md:w-1/2 w-full lg:ml-4 border  border-slate-300 rounded-md shadow-lg">
                   <h1 className="text-xl my-2">
                     <b>country:&nbsp;</b>
                     {country}
@@ -274,10 +274,10 @@ const HotelDetail = () => {
                     {desc}
                   </h1>
                 </div>
-                <div className=" flex-grow  p-3 border-2 border-black rounded-md">
+                <div className=" flex-grow   border border-slate-300 rounded-md shadow-lg p-4">
                   <label
                     htmlFor="date"
-                    className={`leading-7 text-md ${
+                    className={`leading-7 text-md  ${
                       !startDate || !endDate
                         ? "text-red-600 font-bold"
                         : "text-black"
@@ -329,7 +329,7 @@ const HotelDetail = () => {
                       </div>
                       <button
                         onClick={handleClick}
-                        className="text-white bg-indigo-500 border-0 py-2 px-8 my-4 focus:outline-none hover:bg-indigo-600 rounded text-lg w-full active:scale-[0.967] disabled:bg-slate-400 disabled:cursor-not-allowed disabled:scale-[1]"
+                        className="text-white bg-indigo-500 border-0 py-2 px-8 mt-6 focus:outline-none hover:bg-indigo-600 rounded text-lg w-full active:scale-[0.967] disabled:bg-slate-400 disabled:cursor-not-allowed disabled:scale-[1]"
                         disabled={!endDate}
                       >
                         Reserve
@@ -341,7 +341,7 @@ const HotelDetail = () => {
 
               {/* <Gallery />
               <Pricing /> */}
-              <div className="flex justify-center items-center border">
+              <div className="flex justify-center items-center border mt-[10rem]">
                 <Map />
               </div>
             </>

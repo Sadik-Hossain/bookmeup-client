@@ -15,7 +15,7 @@ const Avatar = () => {
     <>
       <div class="flex justify-end">
         <div>
-          <div class=" relative">
+          <div class=" relative ">
             <button
               onClick={() => setOpen(!open)}
               class="
@@ -29,7 +29,7 @@ const Avatar = () => {
          border
          p-2
 
-            hover:border-dashed hover:border-1
+            hover:border-dashed hover:border-1 
             active:scale-95
             transition
             duration-150
